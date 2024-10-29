@@ -1,0 +1,24 @@
+def count(path):
+    #Count each word in one file
+    try:
+        with open(path, 'r') as file:
+            text = file.read()
+            word_count = len(text.split())
+            return word_count
+    except FileNotFoundError:
+        print(f"File {path} not found")
+        return 0
+
+#Text file paths
+file_paths = [
+    "1.txt",
+    "2.txt",
+    "3.txt",
+    "4.txt",
+    "5.txt"
+]
+
+#Count and display words
+for i, path in enumerate(file_paths, 1):
+    words = count(path)
+    print(f"Words in {path}: {words}")
